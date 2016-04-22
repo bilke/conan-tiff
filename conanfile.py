@@ -2,12 +2,13 @@ import os
 from conans import ConanFile, CMake
 from conans.tools import download, unzip
 
-class TiffConan(ConanFile):
-    name = "Tiff"
+class LibtiffConan(ConanFile):
+    name = "libtiff"
     version = "4.0.6"
     generators = "cmake"
     settings = "os", "compiler", "build_type", "arch"
-    exports = ["CMakeLists.txt", "TIFF.cmake", "FindTIFF.cmake"]
+    requires = "zlib/1.2.8@lasote/stable"
+    exports = ["CMakeLists.txt", "FindTIFF.cmake"]
     url="http://github.com/bilke/conan-tiff"
     license="http://www.remotesensing.org/libtiff/"
 
@@ -36,4 +37,4 @@ class TiffConan(ConanFile):
         self.copy("*", dst=".", src=self.INSTALL_DIR)
 
     def package_info(self):
-            self.cpp_info.libs = ["tiff", "tiffxx"]
+            self.cpp_info.libs = ["tiff"]

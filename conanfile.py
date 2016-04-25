@@ -37,4 +37,7 @@ class LibtiffConan(ConanFile):
         self.copy("*", dst=".", src=self.INSTALL_DIR)
 
     def package_info(self):
+        if self.settings.os == "Windows" and self.settings.build_type == "Debug":
+            self.cpp_info.libs = ["tiffd"]
+        else:
             self.cpp_info.libs = ["tiff"]

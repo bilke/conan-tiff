@@ -1,5 +1,5 @@
 #include "tiffio.h"
-main()
+int main()
 {
     TIFF* tif = TIFFOpen("foo.tif", "w");
     TIFFClose(tif);

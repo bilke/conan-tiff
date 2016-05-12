@@ -19,4 +19,4 @@ class TiffReuseConan(ConanFile):
         self.copy(pattern="*.dylib", dst="bin", src="lib")
 
     def test(self):
-        self.run("cd bin && ./tifftest 0")
+        self.run("cd bin && .%stifftest 0" % os.sep)

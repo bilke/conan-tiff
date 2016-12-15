@@ -31,10 +31,12 @@ class LibtiffConan(ConanFile):
             self.run("mkdir _build")
         cd_build = "cd _build"
         CMAKE_OPTIONALS = "-Dlzma=OFF -Djpeg=OFF "
+        if self.settings.os == "Linux":
+            CMAKE_OPTIONALS += "-DCMAKE_POSITION_INDEPENDENT_CODE=ON "
         if self.options.shared == False:
-            CMAKE_OPTIONALS += "-DBUILD_SHARED_LIBS=OFF"
+            CMAKE_OPTIONALS += "-DBUILD_SHARED_LIBS=OFF "
         else:
-            CMAKE_OPTIONALS += "-DBUILD_SHARED_LIBS=ON"
+            CMAKE_OPTIONALS += "-DBUILD_SHARED_LIBS=ON "
         self.run("%s && cmake .. -DCMAKE_INSTALL_PREFIX=../%s %s %s" % (cd_build, self.INSTALL_DIR, cmake.command_line, CMAKE_OPTIONALS))
         self.run("%s && cmake --build . %s" % (cd_build, cmake.build_config))
         self.run("%s && cmake --build . --target install %s" % (cd_build, cmake.build_config))

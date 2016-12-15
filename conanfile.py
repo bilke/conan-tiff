@@ -30,7 +30,7 @@ class LibtiffConan(ConanFile):
         else:
             self.run("mkdir _build")
         cd_build = "cd _build"
-        CMAKE_OPTIONALS = ""
+        CMAKE_OPTIONALS = "-Dlzma=OFF -Djpeg=OFF "
         if self.options.shared == False:
             CMAKE_OPTIONALS += "-DBUILD_SHARED_LIBS=OFF"
         else:

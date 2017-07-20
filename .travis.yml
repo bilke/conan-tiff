@@ -8,7 +8,7 @@ env:
     - CONAN_TOTAL_PAGES=1
     - CONAN_CURRENT_PAGE=1
     - CONAN_STABLE_BRANCH_PATTERN="release/*"
-    - CONAN_REMOTES="https://bintray.com/conan/conan-center"
+    - CONAN_REMOTES="https://conan.bintray.com"
 
 linux: &linux
   os: linux

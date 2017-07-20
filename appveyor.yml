@@ -6,10 +6,11 @@ environment:
 
     CONAN_UPLOAD: "https://ogs.jfrog.io/ogs/api/conan/conan"
     CONAN_REFERENCE: "libtiff/4.0.6"
-    CONAN_USERNAME: "jenkins"
+    CONAN_USERNAME: "bilke"
     CONAN_LOGIN_USERNAME: "jenkins"
     CONAN_CHANNEL: "testing"
     CONAN_STABLE_BRANCH_PATTERN: "release/*"
+    CONAN_REMOTES: "https://conan.bintray.com"
 
     VS150COMNTOOLS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\"
 

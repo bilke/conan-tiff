@@ -11,7 +11,7 @@ class LibtiffConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=False"
-    requires = "zlib/1.2.8@lasote/stable"
+    requires = "zlib/1.2.11@conan/stable"
     exports = ["CMakeLists.txt", "FindTIFF.cmake"]
     url="http://github.com/bilke/conan-tiff"
     license="http://www.remotesensing.org/libtiff/"

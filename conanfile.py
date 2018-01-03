@@ -16,6 +16,9 @@ class LibtiffConan(ConanFile):
     url="http://github.com/bilke/conan-tiff"
     license="http://www.remotesensing.org/libtiff/"
 
+    def config(self):
+        del self.settings.compiler.libcxx
+
     def source(self):
         zip_name = "tiff-%s.zip" % self.version
         download("http://opengeosys.s3.amazonaws.com/ogs6-lib-sources/%s" % zip_name , zip_name)
